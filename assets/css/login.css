@@ -1,0 +1,126 @@
+/* login */
+
+#login-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid orange;
+}
+
+#login-form input{
+    width: 50%;
+    margin: 5px auto
+}
+
+#login-form #login-btn{
+    background-color:orange;
+    color: white;
+}
+
+#login-form #login-btn:hover{
+    background-color: rgb(36, 229, 74);
+    color: rgb(255, 255, 255);
+}
+
+#login-form #register-url{
+    background-color: rgb(228, 53, 53);
+    color: #ffffff;
+}
+
+#login-form #register-url:hover {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+
+.h2-login{
+    color: rgba(0, 119, 255, 0.278);
+    font-weight: bold;
+    text-align: center;
+}
+
+.loging-image{
+    background-image: url('../images/e_commerce_icon.png');
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    background-repeat: no-repeat;
+}
+
+/* .login-background{
+    background-image: url("../images/e_commerce_icon.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+/* Register */
+
+#register-form{
+    width: 50%;
+    margin: 3px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid orange;
+}
+
+#register-form input{
+    width: 50%;
+    margin: 5px auto
+}
+#register-form #register-btn{
+    background-color:orange;
+    color: white;
+}
+
+#register-form #register-btn:hover{
+    background-color: rgb(36, 229, 74);
+    color: rgb(255, 255, 255);
+}
+
+#register-form #login-url{
+    background-color: rgb(228, 53, 53);
+    color: #ffffff;
+}
+
+#register-form #login-url:hover {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+
+/* Account */
+
+#account-form{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin: 5px auto;
+}
+
+#account-form #change-pass-btn{
+    color: aliceblue;
+    background-color: orange;
+}
+#account-form #change-pass-btn:hover{
+    background-color: rgb(228, 53, 53);
+    color: #ffffff;
+}
+
+.account-info #oders-btn,#logout-btn{
+    color: orange;
+    text-decoration: none;
+}
+
+.account-info #oders-btn:hover,#logout-btn:hover{
+    color:  rgb(228, 53, 53);
+    text-decoration: none;
+}
+
+

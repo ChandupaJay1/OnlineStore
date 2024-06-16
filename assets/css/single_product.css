@@ -1,0 +1,31 @@
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus{
+    outline: none;
+}
+
+.single-product .btn{
+    background-color: #fb774b;
+    opacity: 1;
+    transition: 0.4s all;
+}
+
+.single-product .btn:hover{
+    background-color: #222222;
+}
