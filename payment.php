@@ -13,7 +13,7 @@ $cart_items = array_map(function ($item) {
     return $item['product_name'];
 }, $_SESSION['cart']);
 
-print_r($cart_items);
+// print_r($cart_items);
 
 if (isset($_POST['order_pay_btn'])) {
     $order_status = $_POST['order_status'];
