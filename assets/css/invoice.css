@@ -45,6 +45,22 @@ h2, h4 {
 }
 
 .h4invoice{
-    align-items: start !important;
+    /* align-items: start !important; */
     text-align: start;
+}
+
+.pi{
+    text-align: start;
+}
+
+.hrpi{
+
+    width: 100px;
+    /* height: 5px; */
+    flex-direction: start;
+    /* margin: 0 auto; */
+    color: rgb(248, 90, 33);
+    border-top: 6px solid rgb(248, 90, 33);
+    border-radius: 3px;;
+
 }

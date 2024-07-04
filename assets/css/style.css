@@ -324,16 +324,6 @@
      border-radius: 3px;
  }
 
- .hr2 {
-    width: 50px;
-    /* height: 5px; */
-    flex: start;
-    margin: 0 auto;
-    color: rgb(248, 90, 33);
-    border-top: 6px solid rgb(248, 90, 33);
-    border-radius: 3px;
-}
-
 
  .hr-c {
      width: 50px;

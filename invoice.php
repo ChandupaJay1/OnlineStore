@@ -31,12 +31,12 @@ $order_id = htmlspecialchars($_GET['order_id']);
                     <button onclick="printInvoice()" class="btn btn-primary">Print Invoice</button>
                 </div>
             </div>
-            <hr class="hr2" />
+            <hr class="hrpi" />
 
             <div class="row">
                 <div class="col-6">
                     <h4 class="h4invoice">Billing Details</h4>
-                    <p>
+                    <p class="pi">
                         <strong><?php echo htmlspecialchars($_SESSION['first_name'] ?? ''); ?> <?php echo htmlspecialchars($_SESSION['last_name'] ?? ''); ?></strong><br>
                         <?php echo htmlspecialchars($_SESSION['address'] ?? ''); ?><br>
                         <?php echo htmlspecialchars($_SESSION['city'] ?? ''); ?><br>
