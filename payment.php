@@ -73,9 +73,17 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
             <?php if (isset($_SESSION['total']) && $_SESSION['total'] != 0) { ?>
                 <p>Total payment: Rs. <?php echo $_SESSION['total']; ?></p>
                 <input class="buy-btn" type="submit" onclick="paymentGateway();" value="Pay Now" />
+
+                <?php }else if(isset($_POST['order_status']) && $_POST['order_status'] == "Not Paid"){ ?>
+                <p>Total payment: Rs. <?php echo $_POST['order_total_price']; ?></p>
+                <input class="buy-btn" type="submit" onclick="paymentGateway();" value="Pay Now"/>
+
             <?php } else { ?>
+
                 <p>You don't have any order to pay</p>
+
             <?php } ?>
+
         </div>
 
         </div>
@@ -100,8 +108,10 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
     <!-- Footer -->
     <?php include('includes/footer-view.php'); ?>
+
     <script src="assets/js/payment.js"></script>
     <script src="assets/js/script.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
 
