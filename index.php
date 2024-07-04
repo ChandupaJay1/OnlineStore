@@ -22,13 +22,49 @@
     <!-- home -->
 
     <section>
-        <div class="container" id="home">
-            <h5>NEW ARRIVALS</h5>
-            <h1><span>Best Prices</span> this Season</h1>
-            <p>D26 Clothing offer the best products for the most affrodable price</p>
-            <button class="btn btn-primary">Shop Now</button>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('assets/images/img_2.jpg')">
+                <div class="carousel-caption text-center">
+                    <h5>NEW ARRIVALS</h5>
+                    <h1><span>Best Prices</span> this Season</h1>
+                    <p>D26 Clothing offers the best products for the most affordable price</p>
+                    <button class="btn btn-primary">Shop Now</button>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg')">
+                <div class="carousel-caption text-center">
+                    <h5>EXCLUSIVE COLLECTION</h5>
+                    <h1><span>Trendy & Stylish</span> Outfits</h1>
+                    <p>Discover the latest trends in fashion</p>
+                    <button class="btn btn-primary">Explore Now</button>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg')">
+                <div class="carousel-caption text-center">
+                    <h5>SUMMER SALE</h5>
+                    <h1><span>Up to 50% Off</span> on Selected Items</h1>
+                    <p>Don't miss out on these great deals!</p>
+                    <button class="btn btn-primary">Shop Sale</button>
+                </div>
+            </div>
         </div>
-    </section>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+
 
     <!-- brandings -->
     <section>
