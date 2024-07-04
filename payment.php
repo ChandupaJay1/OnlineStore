@@ -50,12 +50,16 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Payment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+
     <link rel="icon" href="assets/images/icon/ico-new.png" />
-    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+
+    
 </head>
 
 <body>
@@ -73,9 +77,17 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
             <?php if (isset($_SESSION['total']) && $_SESSION['total'] != 0) { ?>
                 <p>Total payment: Rs. <?php echo $_SESSION['total']; ?></p>
                 <input class="buy-btn" type="submit" onclick="paymentGateway();" value="Pay Now" />
+
+                <?php }else if(isset($_POST['order_status']) && $_POST['order_status'] == "Not Paid"){ ?>
+                <p>Total payment: Rs. <?php echo $_POST['order_total_price']; ?></p>
+                <input class="buy-btn" type="submit" onclick="paymentGateway();" value="Pay Now"/>
+
             <?php } else { ?>
+
                 <p>You don't have any order to pay</p>
+
             <?php } ?>
+
         </div>
 
         </div>
@@ -100,8 +112,12 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
     <!-- Footer -->
     <?php include('includes/footer-view.php'); ?>
+
+    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+
     <script src="assets/js/payment.js"></script>
     <script src="assets/js/script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
 
