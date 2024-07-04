@@ -1,0 +1,59 @@
+body {
+    background-color: #f8f9fa;
+}
+
+#search {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.product {
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product img {
+    border-radius: 10px;
+}
+
+.product .star i {
+    color: #ffbf00;
+}
+
+.product .p-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product .p-price {
+    font-size: 1.1rem;
+    color: #ff5722;
+}
+
+.buy-btn {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #e64a19;
+}
+
+.pagination .page-link {
+    color: #ff5722;
+}
+
+.pagination .page-link:hover {
+    color: #e64a19;
+}

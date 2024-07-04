@@ -1,9 +1,11 @@
 <?php
 
-    include('connection.php');
+    include('config.php');
 
-    $conn->prepare("SELECT * FROM products LIMIT 4");
+    $stmt = $conn->prepare("SELECT * FROM products LIMIT 4");
+
     $stmt->execute();
+
     $featured_product = $stmt->get_result();
 
 

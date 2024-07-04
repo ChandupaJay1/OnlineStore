@@ -62,14 +62,14 @@ th:last-child{
     text-align: right;
 }
 
-.checkout-btn{
+.cart-btn{
     display: flex;
     justify-content: flex-end;
     background-color: orange;
     color: #ffff;
 }
 
-.checkout-container{
+.cart-container{
     display: flex;
     justify-content: flex-end;
 }

@@ -1,0 +1,47 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['total'])) {
+    $amount = $_SESSION['total'];
+} else if (isset($_POST['order_total_price'])) {
+    $amount = $_POST['order_total_price'];
+} else {
+    $amount = 0; // default to 0 if no amount is found
+}
+
+$merchant_id = "1227488";
+$order_id = uniqid();
+$merchant_secret = "MzE2MDA0NDQ3ODMyNjQyMzMzMzkxNzY3MzI5Njk5MzU2NzgxMjAwMA==";
+$currency = "LKR";
+
+$hash = strtoupper(
+    md5(
+        $merchant_id . 
+        $order_id . 
+        number_format($amount, 2, '.', '') . 
+        $currency .  
+        strtoupper(md5($merchant_secret)) 
+    ) 
+);
+
+$array = [];
+
+$array["items"] = "Door bell wireless";
+$array["first_name"] = "Saman";
+$array["last_name"] = "Kumara";
+$array["email"] = "Samankumara@gmail.com";
+$array["phone"] = "0715221982";
+$array["address"] = "102- colombo Sri Lanka";
+$array["city"] = "colombo";
+
+$array["amount"] = $amount;
+$array["merchant_id"] = $merchant_id;
+$array["order_id"] = $order_id;
+$array["currency"] = $currency;
+$array["hash"] = $hash;
+
+$jsonObj = json_encode($array);
+
+echo $jsonObj;
+?>

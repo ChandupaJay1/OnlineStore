@@ -1,0 +1,50 @@
+/* invoice.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2, h4 {
+    color: #333;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.table tfoot th {
+    border: none;
+    background-color: transparent;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+@media print {
+    .btn-primary {
+        display: none;
+    }
+}
+
+.h4invoice{
+    align-items: start !important;
+    text-align: start;
+}

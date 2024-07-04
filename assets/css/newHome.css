@@ -1,0 +1,96 @@
+#home {
+    text-align: center;
+    padding: 50px 0;
+    background: #f8f9fa;
+}
+#home h5 {
+    color: #ff6f61;
+}
+#home h1 span {
+    color: #007bff;
+}
+#home p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+#brand {
+    padding: 50px 0;
+    background: #ffffff;
+}
+#brand img {
+    padding: 15px;
+    transition: transform 0.3s;
+}
+#brand img:hover {
+    transform: scale(1.05);
+}
+
+/* ----------------------------- */
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.login-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.form-group a {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
