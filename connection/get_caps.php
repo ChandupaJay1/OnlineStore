@@ -3,7 +3,7 @@
 include('config.php');
 
 
-$stmt = $conn->prepare("SELECT * FROM `products` WHERE `product_category`= 'Cap' LIMIT 4");
+$stmt = $conn->prepare("SELECT * FROM `products` WHERE `product_category`= 'cap' LIMIT 4");
 
 $stmt->execute();
 

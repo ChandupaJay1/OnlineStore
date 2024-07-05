@@ -1,0 +1,32 @@
+.navbar {
+    background-color: #ffffff;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 0.5rem;
+    margin-top: -10px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #333;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: rgb(253, 253, 253);
+  }
+  
+  .navbar-nav .btn {
+    /* color: coral; */
+    color: rgb(254, 254, 254);
+  }
+  
+  .navbar-nav .btn:hover {
+    /* color: coral; */
+    color: #ffffff;
+  }
+  
+  .font {
+    font-family:'Segoe UI';
+    font-size: 25px;
+  }
