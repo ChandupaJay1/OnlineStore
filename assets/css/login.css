@@ -33,9 +33,19 @@
     color: rgb(255, 255, 255);
 }
 
+#login-form #admin-url{
+    background-color: rgb(132, 221, 90);
+    color: #ffffff;
+}
+
+#login-form #admin-url:hover {
+    background-color: rgb(33, 98, 238);
+    color: rgb(255, 255, 255);
+}
+
 
 .h2-login{
-    color: rgba(0, 119, 255, 0.278);
+    color: orange;
     font-weight: bold;
     text-align: center;
 }

@@ -56,6 +56,7 @@ if (isset($_POST['login_btn'])) {
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="StyleSheet" href="assets/css/footer.css" />
+    <link rel="StyleSheet" href="assets/css/login.css" />
 
 
     <link rel="icon" href="assets/images/icon/ico-new.png" />
@@ -100,7 +101,7 @@ if (isset($_POST['login_btn'])) {
                 </div>
 
                 <div class="form-group mt-2">
-                    <a id="register-url" class="btn" href="adminLogin.php">Go To Admin Login</a>
+                    <a id="admin-url" class="btn" href="adminLogin.php">Go To Admin Login</a>
                 </div>
             </form>
         </div>
