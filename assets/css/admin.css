@@ -1,32 +1,63 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar-brand .font {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.alert {
+  margin-top: 20px;
+}
+
+.pagination .page-item .page-link {
+  color: #343a40;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
 .navbar {
-    background-color: #ffffff;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-    font-size: 0.5rem;
-    margin-top: -10px;
-  }
-  
-  .navbar-nav .nav-link {
-    color: #333;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: rgb(253, 253, 253);
-  }
-  
-  .navbar-nav .btn {
-    /* color: coral; */
-    color: rgb(254, 254, 254);
-  }
-  
-  .navbar-nav .btn:hover {
-    /* color: coral; */
-    color: #ffffff;
-  }
-  
-  .font {
-    font-family:'Segoe UI';
-    font-size: 25px;
-  }
+  margin-bottom: 20px;
+}
+
+.navbar-brand .font {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 1rem;
+  color: #333;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}

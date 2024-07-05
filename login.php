@@ -91,12 +91,16 @@ if (isset($_POST['login_btn'])) {
                     <input type="password" class="form-control" id="login-password" name="password" placeholder="Password" required />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <input type="submit" class="btn" id="login-btn" name="login_btn" value="Login" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <a id="register-url" class="btn" href="register.php">Don't have an account? Register</a>
+                </div>
+
+                <div class="form-group mt-2">
+                    <a id="register-url" class="btn" href="adminLogin.php">Go To Admin Login</a>
                 </div>
             </form>
         </div>

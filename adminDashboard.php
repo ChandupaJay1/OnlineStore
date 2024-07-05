@@ -31,11 +31,7 @@ include('adminHeader.php');
     <?php
 
     // Set the current page number
-    if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
-        $page_no = $_GET['page_no'];
-    } else {
-        $page_no = 1;
-    }
+    $page_no = isset($_GET['page_no']) ? $_GET['page_no'] : 1;
 
     // Calculate the total number of records and pages
     $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM `orders`");
@@ -57,27 +53,27 @@ include('adminHeader.php');
     ?>
 
     <div class="container-fluid">
-        <div class="row" style="min-height: 1000px">
+        <div class="row vh-100">
 
             <?php include('sideMenu.php'); ?>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 mt-3">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard</h1>
                 </div>
 
                 <h2>Orders</h2>
 
-                <?php if(isset($_GET['order_updated'])) { ?>
-                    <p class="text-center" style="color: green;"><?php echo $_GET['order_updated']; ?></p>
+                <?php if (isset($_GET['order_updated'])) { ?>
+                    <div class="alert alert-success text-center"><?php echo $_GET['order_updated']; ?></div>
                 <?php } ?>
 
-                <?php if(isset($_GET['order_failed'])) { ?>
-                    <p class="text-center" style="color: red;"><?php echo $_GET['order_failed']; ?></p>
+                <?php if (isset($_GET['order_failed'])) { ?>
+                    <div class="alert alert-danger text-center"><?php echo $_GET['order_failed']; ?></div>
                 <?php } ?>
 
                 <div class="table-responsive">
-                    <table class="table table-stripped table-sm">
+                    <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Order ID</th>
@@ -99,23 +95,23 @@ include('adminHeader.php');
                                     <td><?php echo $order['order_date']; ?></td>
                                     <td><?php echo $order['user_phone']; ?></td>
                                     <td><?php echo $order['user_address']; ?></td>
-                                    <td><a class="btn btn-primary" href="editOrder.php?order_id=<?php echo $order['order_id']; ?>">Edit</a></td>
-                                    <td><a class="btn btn-danger" href="deleteOrder.php?order_id=<?php echo $order['order_id']; ?>">Delete</a></td>
+                                    <td><a class="btn btn-sm btn-primary" href="editOrder.php?order_id=<?php echo $order['order_id']; ?>">Edit</a></td>
+                                    <td><a class="btn btn-sm btn-danger" href="deleteOrder.php?order_id=<?php echo $order['order_id']; ?>">Delete</a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
 
                     <nav aria-labelledby="Page navigation example">
-                        <ul class="pagination mt-5">
+                        <ul class="pagination justify-content-center mt-4">
                             <li class="page-item <?php if ($page_no <= 1) { echo 'disabled'; } ?>">
-                                <a class="page-link" href="<?php if ($page_no <= 1) { echo '#'; } else { echo "?page_no=" . ($page_no - 1); } ?>">Previous</a>
+                                <a class="page-link" href="<?php if ($page_no > 1) { echo "?page_no=" . ($page_no - 1); } ?>">Previous</a>
                             </li>
                             <?php for ($i = 1; $i <= $total_no_of_pages; $i++) { ?>
                                 <li class="page-item <?php if ($page_no == $i) { echo 'active'; } ?>"><a class="page-link" href="?page_no=<?php echo $i; ?>"><?php echo $i; ?></a></li>
                             <?php } ?>
                             <li class="page-item <?php if ($page_no >= $total_no_of_pages) { echo 'disabled'; } ?>">
-                                <a class="page-link" href="<?php if ($page_no >= $total_no_of_pages) { echo '#'; } else { echo "?page_no=" . ($page_no + 1); } ?>">Next</a>
+                                <a class="page-link" href="<?php if ($page_no < $total_no_of_pages) { echo "?page_no=" . ($page_no + 1); } ?>">Next</a>
                             </li>
                         </ul>
                     </nav>
