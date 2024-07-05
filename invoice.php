@@ -58,7 +58,9 @@ $order_id = htmlspecialchars($_GET['order_id']);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (isset($_SESSION['order_items'])): ?>
+                    <?php 
+                    $total_payment = 0;
+                    if (isset($_SESSION['order_items'])): ?>
                         <?php foreach ($_SESSION['order_items'] as $item): ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($item['product_name']); ?></td>
@@ -66,13 +68,14 @@ $order_id = htmlspecialchars($_GET['order_id']);
                                 <td><?php echo htmlspecialchars($item['product_quantity']); ?></td>
                                 <td>Rs. <?php echo htmlspecialchars(number_format($item['product_price'] * $item['product_quantity'], 2)); ?></td>
                             </tr>
+                            <?php $total_payment += $item['product_price'] * $item['product_quantity']; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
                 <tfoot>
                     <tr>
                         <th colspan="3" class="text-end py-5">Total</th>
-                        <th>Rs. <?php echo htmlspecialchars(number_format($_SESSION['total'], 2)); ?></th>
+                        <th>Rs. <?php echo htmlspecialchars(number_format($total_payment, 2)); ?></th>
                     </tr>
                 </tfoot>
             </table>
