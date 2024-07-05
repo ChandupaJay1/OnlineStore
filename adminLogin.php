@@ -48,11 +48,18 @@ if (isset($_POST['login_btn'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Admin Login</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="icon" href="assets/images/icon/ico-new.png" />
 </head>
+
 <body style="background-color: #F9EBEA">
 
     <!-- <?php include('adminHeader.php'); ?> -->
