@@ -1,5 +1,17 @@
  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+ @media only screen and (max-width: 990px) {
+    /* CSS rules for tablets and smaller desktop screens */
+}
+
+@media only screen and (max-width: 768px) {
+    /* CSS rules for mobile devices */
+}
+
+@media only screen and (max-width: 576px) {
+    /* CSS rules for smaller mobile devices */
+}
+
  .nav-buttons {
      margin-left: 60%;
  }
@@ -52,6 +64,8 @@
      color: rgba(12, 12, 12, 0.489);
  }
 
+/* NAv bar */
+
  .navbar {
      font-size: 16px;
      padding-top: 2rem !important;
@@ -62,10 +76,30 @@
 
  }
 
+ .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* .navbar-nav .nav-item a {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+} */
+
+.navbar-nav .nav-item i {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
  .navbar-light .navbar-nav .nav-link {
      padding: 0 20px;
      color: black;
      transition: 0.4s ease;
+ }
+
+ .navbar-nav{
+    display: flex;
  }
 
  .nav-item>*:hover {
@@ -88,29 +122,46 @@
  }
 
  @media only screen and (max-width: 990px) {
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
 
-     .nav-buttons {
-         margin: 10px;
-     }
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
 
-     .nav-buttons ul {
-         margin: 1rem;
-         justify-content: flex-start;
-         align-items: flex-start;
-         text-align: left;
-         margin-left: 10px;
-     }
+    .navbar-nav .nav-item a {
+        width: 100%;
+        padding: 10px 15px;
+        text-align: left;
+    }
 
-     .nav-buttons ul .fa {
-         margin: 20px 5px 10px 20px;
+    .navbar-toggler {
+        margin-left: auto;
+    }
 
-     }
+    .navbar i {
+        padding-left: 5px;
+    }
 
-     .navbar i {
-         padding-left: 5px;
-     }
+    .navbar i {
+        margin: 0;
+    }
 
- }
+    .nav-item .nav-link {
+        padding-left: 20px;
+    }
+
+    .navbar-brand {
+        margin-right: auto;
+    }
+}
+
+ /* nev bar */
+
+
+ 
 
  #home {
      margin-top: 5.2rem;
@@ -771,7 +822,7 @@
 
 .contact-info span {
     font-weight: bold;
-    color: #e9790a;
+    color: #ff8000;
 }
 
 .map-container {

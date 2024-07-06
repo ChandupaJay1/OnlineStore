@@ -55,6 +55,7 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/shop.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
 
     <link rel="icon" href="assets/images/icon/ico-new.png" />
@@ -68,12 +69,12 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
     <!--Payment-->
     <section class="my-5 py-5">
-        <div class="container text-center mt-3 pt-5">
+        <div class="container text-center mt-5 pt-5">
             <h2 class="form-weight-bold">Payment</h2>
             <hr class="hr" />
         </div>
 
-        <div class="mx-auto container text-center">
+        <div class="mx-auto container text-center pt-4">
             <?php if (isset($_SESSION['total']) && $_SESSION['total'] != 0) { ?>
                 <p>Total payment: Rs. <?php echo $_SESSION['total']; ?></p>
                 <input class="buy-btn" type="submit" onclick="paymentGateway();" value="Pay Now" />
