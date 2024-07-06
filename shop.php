@@ -2,28 +2,69 @@
 
 include('connection/config.php');
 
-//use the search section
+// Initialize an empty query
+$search_query = "SELECT * FROM `products` WHERE 1=1";
+$params = [];
+$types = "";
+
+// Maintain filter states
+$category = isset($_POST['category']) ? $_POST['category'] : '';
+$price = isset($_POST['price']) ? $_POST['price'] : '';
+$keywords = isset($_POST['keywords']) ? $_POST['keywords'] : '';
+$sort_by = isset($_POST['sort_by']) ? $_POST['sort_by'] : 'name_asc';
+
 if (isset($_POST['search'])) {
+    // Filter by category
+    if (!empty($category)) {
+        $search_query .= " AND product_category = ?";
+        $params[] = $category;
+        $types .= "s";
+    }
 
-    $category = $_POST['category'];
-    $price = $_POST['price'];
+    // Filter by price
+    if (!empty($price)) {
+        $search_query .= " AND product_price <= ?";
+        $params[] = $price;
+        $types .= "i";
+    }
 
-    $stmt = $conn->prepare("SELECT * FROM `products` WHERE product_category=? AND product_price<=?");
+    // Filter by keywords
+    if (!empty($keywords)) {
+        $keywords_param = "%" . $keywords . "%";
+        $search_query .= " AND (product_name LIKE ? OR product_description LIKE ?)";
+        $params[] = $keywords_param;
+        $params[] = $keywords_param;
+        $types .= "ss";
+    }
+}
 
-    $stmt->bind_param("si", $category, $price);
-
-    $stmt->execute();
-
-    $products = $stmt->get_result();
-
-
-    //return all products
+// Sort by
+if (!empty($sort_by)) {
+    if ($sort_by == 'name_asc') {
+        $search_query .= " ORDER BY product_name ASC";
+    } elseif ($sort_by == 'name_desc') {
+        $search_query .= " ORDER BY product_name DESC";
+    } elseif ($sort_by == 'price_asc') {
+        $search_query .= " ORDER BY product_price ASC";
+    } elseif ($sort_by == 'price_desc') {
+        $search_query .= " ORDER BY product_price DESC";
+    }
 } else {
-    $stmt = $conn->prepare("SELECT * FROM `products`");
+    $search_query .= " ORDER BY product_name ASC";
+}
 
-    $stmt->execute();
+$stmt = $conn->prepare($search_query);
 
-    $products = $stmt->get_result();
+if ($params) {
+    $stmt->bind_param($types, ...$params);
+}
+
+$stmt->execute();
+
+$products = $stmt->get_result();
+
+if ($stmt->error) {
+    echo "Error: " . $stmt->error;
 }
 
 ?>
@@ -54,45 +95,64 @@ if (isset($_POST['search'])) {
             <!-- Search Section -->
             <aside id="search" class="col-lg-3 col-md-4 col-sm-12">
                 <div class="my-5 py-3 text-center">
-                    <h5>Search Products</h5>
+                    <h5 class="h5-shop">Search Products</h5>
                 </div>
 
                 <form action="shop.php" method="POST">
                     <div class="mb-3">
                         <p class="fw-bold">Category</p>
                         <div class="form-check">
-                            <input class="form-check-input" value="Full Suite" type="radio" name="category" id="category_one" />
+                            <input class="form-check-input" value="full suite" type="radio" name="category" id="category_one" <?php echo ($category == 'full suite') ? 'checked' : ''; ?>/>
                             <label class="form-check-label" for="category_one">
                                 Full Suite
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" value="Cap" type="radio" name="category" id="category_two" checked />
+                            <input class="form-check-input" value="cap" type="radio" name="category" id="category_two" <?php echo ($category == 'cap') ? 'checked' : ''; ?> />
                             <label class="form-check-label" for="category_two">
                                 Caps
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" value="Shirts" type="radio" name="category" id="category_three" />
+                            <input class="form-check-input" value="tshirt" type="radio" name="category" id="category_three" <?php echo ($category == 'tshirt') ? 'checked' : ''; ?> />
                             <label class="form-check-label" for="category_three">
-                                Shirts
+                                T-Shirts
                             </label>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <p class="fw-bold">Price</p>
-                        <input type="range" class="form-range w-100" min="1" max="5000" id="customRange2" name="price" value="100" />
+                        <input type="range" class="form-range w-100" min="500" max="10000" id="customRange2" name="price" value="<?php echo $price; ?>" />
                         <div class="d-flex justify-content-between">
-                            <span>1</span>
-                            <span>5000</span>
+                            <span>500</span>
+                            <span>10,000</span>
                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <p class="fw-bold">Keywords</p>
+                        <input type="text" class="form-control" name="keywords" placeholder="Enter keywords" value="<?php echo $keywords; ?>" />
+                    </div>
+
+                    <div class="mb-3">
+                        <p class="fw-bold">Sort By</p>
+                        <select class="form-select" name="sort_by">
+                            <option value="name_asc" <?php echo ($sort_by == 'name_asc') ? 'selected' : ''; ?>>Name (A-Z)</option>
+                            <option value="name_desc" <?php echo ($sort_by == 'name_desc') ? 'selected' : ''; ?>>Name (Z-A)</option>
+                            <option value="price_asc" <?php echo ($sort_by == 'price_asc') ? 'selected' : ''; ?>>Price (Low to High)</option>
+                            <option value="price_desc" <?php echo ($sort_by == 'price_desc') ? 'selected' : ''; ?>>Price (High to Low)</option>
+                        </select>
                     </div>
 
                     <div class="form-group my-3">
                         <input type="submit" name="search" value="Search" class="btn btn-primary w-100" />
+                    </div>
+
+                    <div class="form-group my-3">
+                        <a href="shop.php" class="btn btn-secondary w-100">Reset Filters</a>
                     </div>
                 </form>
             </aside>

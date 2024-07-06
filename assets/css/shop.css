@@ -57,3 +57,11 @@ body {
 .pagination .page-link:hover {
     color: #e64a19;
 }
+
+.h5-shop{
+    text-align: left;
+    /* margin-top: 3rem; */
+    margin-bottom: -30px;
+    font-size: 1rem;
+    font-weight: 600;
+}

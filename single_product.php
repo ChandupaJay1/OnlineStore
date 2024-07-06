@@ -58,13 +58,13 @@ if (isset($_GET['product_id'])) {
                     <img src="assets/images/clothes/<?php echo $row['product_image']; ?>" class="image-fluid w-100 pb-1" id="mainImg" />
                     <div class="small-img-group">
                         <div class="small-img-col">
-                            <img src="assets\images\clothes\<?php echo $row['product_image2']; ?>" width="100%" class="small-img" />
+                            <img src="assets/images/clothes/<?php echo $row['product_image2']; ?>" width="100%" class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="assets\images\clothes\<?php echo $row['product_image3']; ?>" width="100%" class="small-img" />
+                            <img src="assets/images/clothes/<?php echo $row['product_image3']; ?>" width="100%" class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="assets\images\clothes\<?php echo $row['product_image4']; ?>" width="100%" class="small-img" />
+                            <img src="assets/images/clothes/<?php echo $row['product_image4']; ?>" width="100%" class="small-img" />
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ if (isset($_GET['product_id'])) {
             <hr class="hr mx-auto ">
         </div>
         <div class="row mx-auto container-fluid">
-            <?php include('connection/get_featured_product.php'); ?>
+            <?php include('connection/get_products.php'); ?>
 
             <?php while ($row = $featured_product->fetch_assoc()) { ?>
                 <div class="product text-center col-lg-3 col-md-4 col-sm-12" id="singleProduct">

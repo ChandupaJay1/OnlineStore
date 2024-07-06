@@ -134,17 +134,38 @@
  }
 
 
+
+/* Branding section */
+
+
  #brand {
-     display: flex;
-     justify-content: space-evenly;
-     margin-top: 22px;
-     flex-wrap: wrap;
+    margin-top: 22px;
+}
 
- }
+.brand-logo {
+    max-width: 100px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
- #brand>* {
-     max-width: 100px;
- }
+.brand-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-logo {
+        max-width: 60px;
+    }
+}
+
+/* Branding section */
+
 
  #new .one img {
      width: 60%;

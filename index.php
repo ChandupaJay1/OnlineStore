@@ -23,14 +23,14 @@
     <!-- home -->
 
     <section>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('assets/images/img_2.jpg')">
+                <div class="carousel-item active" style="background-image: url('assets/images/img_2.jpg'); background-size: cover; background-position: center;">
                     <div class="carousel-caption text-center">
                         <h5>NEW ARRIVALS</h5>
                         <h1><span>Best Prices</span> this Season</h1>
@@ -38,7 +38,7 @@
                         <button class="btn btn-primary">Shop Now</button>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg')">
+                <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg'); background-size: cover; background-position: center;">
                     <div class="carousel-caption text-center">
                         <h5>EXCLUSIVE COLLECTION</h5>
                         <h1><span>Trendy & Stylish</span> Outfits</h1>
@@ -46,7 +46,7 @@
                         <button class="btn btn-primary">Explore Now</button>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg')">
+                <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg'); background-size: cover; background-position: center;">
                     <div class="carousel-caption text-center">
                         <h5>SUMMER SALE</h5>
                         <h1><span>Up to 50% Off</span> on Selected Items</h1>
@@ -55,11 +55,11 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -69,14 +69,24 @@
 
     <!-- brandings -->
     <section>
-        <div class="container" id="brand">
-
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand/brand_1.png" />
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand/brand_2.jpg" />
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand/brand_6.jpg" />
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand/brand_4.png" />
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand/brand_5.jpg" />
-
+        <div class="container text-center my-5" id="brand">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_1.png" alt="Brand 1" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_2.jpg" alt="Brand 2" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_6.jpg" alt="Brand 3" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_4.png" alt="Brand 4" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_5.jpg" alt="Brand 5" />
+                </div>
+            </div>
         </div>
     </section>
 
@@ -297,6 +307,8 @@
     <?php include('includes/footer-view.php'); ?>
 
     <script src="assets\js\script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
