@@ -719,7 +719,9 @@
 
  /* Contact */
 
- #contact span {
+
+
+ /* #contact span {
      color: orange;
  }
 
@@ -742,15 +744,56 @@
     padding: 10px;
     text-align: center;
     color: white;
-    /* font-weight: bold; */
     opacity: 1;
     transform: 0.4s all;
     border: none;
+} */
+
+.contact-info {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info hr {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+}
+
+.contact-info span {
+    font-weight: bold;
+    color: #e9790a;
+}
+
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .buy-btn:hover{
     background-color: #39d58f;
 }
+
+
 
 /* order */
 
