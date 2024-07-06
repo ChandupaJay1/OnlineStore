@@ -1,0 +1,13 @@
+<?php
+
+include('config.php');
+
+
+$stmt = $conn->prepare("SELECT * FROM `products` WHERE `product_category`= 'full suite' LIMIT 4");
+
+$stmt->execute();
+
+$full_suite = $stmt->get_result();
+
+
+?>
