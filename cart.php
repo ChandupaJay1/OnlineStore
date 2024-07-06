@@ -26,13 +26,18 @@ if (isset($_POST['add_to_cart'])) {
 
         $_SESSION['cart'][$product_id] = $product_array;
     } else {
+
         echo '<script>alert("Product was already added to cart")</script>';
     }
+
     calculateTotalCart();
+
 } elseif (isset($_POST['remove_product'])) {
     $product_id = $_POST['product_id'];
     unset($_SESSION['cart'][$product_id]);
+
     calculateTotalCart();
+
 } elseif (isset($_POST['edit_quantity'])) {
     $product_id = $_POST['product_id'];
     $product_quantity = $_POST['product_quantity'];
@@ -41,6 +46,7 @@ if (isset($_POST['add_to_cart'])) {
     $product_array['product_quantity'] = $product_quantity;
 
     $_SESSION['cart'][$product_id] = $product_array;
+    
     calculateTotalCart();
 }
 
