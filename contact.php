@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title></title>
+    <title>Contact Us</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -24,30 +24,27 @@
     <!-- Contact -->
 
     <section id="contact" class="container my-5 py-5">
-        <div class="container text-center mt-5">
+        <div class="contact-info text-center mt-5">
             <h3>Contact Us</h3>
-            <hr class="hr-c mx-auto ">
-            <p class="w-50 mx-auto ">
-                Phone Number<br> <span> 071 1234 567 </span>
+            <hr class="mx-auto">
+            <p class="mt-4">
+                Phone Number<br> 
+                <span>071 1234 567</span>
             </p>
-            <p class="w-50 mx-auto email-c">
-                Email<br> <span> info.onlinestore@mail.com </span>
+            <p>
+                Email<br> 
+                <span>info.onlinestore@mail.com</span>
             </p>
-            <p class="w-50 mx-auto ">
-                We work 24/7 Feel free to contact us anytime you need help or have questions about our products.
+            <p>
+                We work 24/7. Feel free to contact us anytime you need help or have questions about our products.
                 <br>
-                Address:<span> Online Store, P.O. Box 198, Anuradhapura, Sri Lanka.</span>
+                Address: <span>Online Store, P.O. Box 198, Anuradhapura, Sri Lanka.</span>
             </p>
         </div>
-        <div class="my-p py-5">
-            <center><iframe id="iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15828.850503526784!2d80.0189918!3d7.3300005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2de0324599d51%3A0x85477f08875ad2dd!2sDM%20Vegetable%20Center!5e0!3m2!1sen!2slk!4v1680418321118!5m2!1sen!2slk"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
+        <div class="map-container mt-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15828.850503526784!2d80.0189918!3d7.3300005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2de0324599d51%3A0x85477f08875ad2dd!2sDM%20Vegetable%20Center!5e0!3m2!1sen!2slk!4v1680418321118!5m2!1sen!2slk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-
-
-
-
-
 
 
     <!-- Footer -->
