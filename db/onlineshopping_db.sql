@@ -11,11 +11,30 @@
  Target Server Version : 80033 (8.0.33)
  File Encoding         : 65001
 
- Date: 04/07/2024 16:18:14
+ Date: 06/07/2024 12:24:29
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for admin
+-- ----------------------------
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `lname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `mobile` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES (1, 'Chandupa', 'Jayalath', 'chandupajayalath33@gmail.com', '$2y$10$pptUlVo5oVd/jjb8/mBge.c2rB.cE8iOZyl29ULzU7prd.UwhrBQW', '0715221982');
 
 -- ----------------------------
 -- Table structure for order_items
@@ -38,18 +57,16 @@ CREATE TABLE `order_items`  (
   CONSTRAINT `fk_order_items_orders1` FOREIGN KEY (`orders_order_id`) REFERENCES `orders` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_order_items_products1` FOREIGN KEY (`products_product_id`) REFERENCES `products` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_order_items_users1` FOREIGN KEY (`users_user_id`) REFERENCES `users` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 66 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order_items
 -- ----------------------------
-INSERT INTO `order_items` VALUES (5, 3, 2, 'FUKUJE', 'cloth_1.jpg', '2024-06-27 07:06:44', 3200, 1, 1);
-INSERT INTO `order_items` VALUES (6, 3, 3, 'Modern Cloth', 'cloth_2.jpg', '2024-06-27 07:06:44', 3500, 1, 1);
-INSERT INTO `order_items` VALUES (7, 4, 2, 'FUKUJE', 'cloth_1.jpg', '2024-06-27 10:07:34', 3200, 1, 1);
-INSERT INTO `order_items` VALUES (8, 5, 2, 'FUKUJE', 'cloth_1.jpg', '2024-06-27 10:45:28', 3200, 1, 1);
-INSERT INTO `order_items` VALUES (39, 35, 2, 'FUKUJE', 'cloth_1.jpg', '2024-07-04 11:46:13', 3200, 1, 1);
-INSERT INTO `order_items` VALUES (40, 35, 3, 'Modern Cloth', 'cloth_2.jpg', '2024-07-04 11:46:13', 3500, 1, 1);
-INSERT INTO `order_items` VALUES (41, 36, 2, 'FUKUJE', 'cloth_1.jpg', '2024-07-04 12:05:39', 3200, 1, 1);
+INSERT INTO `order_items` VALUES (55, 49, 3, 'Modern Cloth', 'cloth_2.jpg', '2024-07-05 13:34:34', 3500, 1, 1);
+INSERT INTO `order_items` VALUES (56, 50, 3, 'Modern Cloth', 'cloth_2.jpg', '2024-07-05 14:02:18', 3500, 1, 1);
+INSERT INTO `order_items` VALUES (60, 54, 4, 'Modern Cloth 2', 'cloth_3.jpg', '2024-07-05 14:12:13', 5000, 1, 1);
+INSERT INTO `order_items` VALUES (61, 55, 2, 'FUKUJE', 'cloth_1.jpg', '2024-07-05 14:26:07', 3200, 1, 1);
+INSERT INTO `order_items` VALUES (65, 59, 2, 'FUKUJE', 'cloth_1.jpg', '2024-07-06 05:59:21', 3200, 1, 1);
 
 -- ----------------------------
 -- Table structure for orders
@@ -64,24 +81,19 @@ CREATE TABLE `orders`  (
   `user_city` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `user_address` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `order_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `orderscol` varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`order_id`) USING BTREE,
   INDEX `fk_orders_users_idx`(`users_user_id` ASC) USING BTREE,
   CONSTRAINT `fk_orders_users` FOREIGN KEY (`users_user_id`) REFERENCES `users` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES (3, 6700.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 07:06:44', NULL);
-INSERT INTO `orders` VALUES (4, 3200.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 10:07:34', NULL);
-INSERT INTO `orders` VALUES (5, 5700.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 10:45:28', NULL);
-INSERT INTO `orders` VALUES (6, 7500.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 11:07:48', NULL);
-INSERT INTO `orders` VALUES (7, 3200.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 12:03:20', NULL);
-INSERT INTO `orders` VALUES (8, 3200.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 12:03:53', NULL);
-INSERT INTO `orders` VALUES (9, 7500.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-06-27 12:05:07', NULL);
-INSERT INTO `orders` VALUES (35, 6700.00, 1, 'Not Paid', '773729462', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-07-04 11:46:13', NULL);
-INSERT INTO `orders` VALUES (36, 3200.00, 1, 'Not Paid', '773729462', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-07-04 12:05:39', NULL);
+INSERT INTO `orders` VALUES (49, 3500.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-07-05 13:34:34');
+INSERT INTO `orders` VALUES (50, 3500.00, 1, 'paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-07-05 14:02:18');
+INSERT INTO `orders` VALUES (54, 5000.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-07-05 14:12:13');
+INSERT INTO `orders` VALUES (55, 3200.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road', '2024-07-05 14:26:07');
+INSERT INTO `orders` VALUES (59, 3200.00, 1, 'Not Paid', '715221982', 'Anuradhapura', 'LC 59 National Housing Scheme Airport road Anuradhapura', '2024-07-06 05:59:21');
 
 -- ----------------------------
 -- Table structure for products
@@ -105,14 +117,12 @@ CREATE TABLE `products`  (
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES (1, 'NIJKE', 'Full Suite', 'abc', 'cloth_4.jpg', 'cloth_4.jpg', 'cloth_4.jpg', 'cloth_4.jpg', 7500.00, 10, 'Black');
-INSERT INTO `products` VALUES (2, 'FUKUJE', 'Full Suite', 'ABCD', 'cloth_1.jpg', 'cloth_2.jpg', 'cloth_2.jpg', 'cloth_2.jpg', 3200.00, 10, 'white');
-INSERT INTO `products` VALUES (3, 'Modern Cloth', 'Fullsuite', 'abcd', 'cloth_2.jpg', 'cloth_3.jpg', 'cloth_3.jpg', 'cloth_3.jpg', 3500.00, 10, 'bg');
-INSERT INTO `products` VALUES (4, 'Modern Cloth 2', 'Full Suite', 'acd', 'cloth_3.jpg', 'cloth_1.jpg', 'cloth_1.jpg', 'cloth_1.jpg', 5000.00, 10, 'bg');
-INSERT INTO `products` VALUES (5, 'Urban Monkey', 'Cap', 'A baseball cap that became popular in the 1890s is a perfect mix of style and utility. It is one of the favorite designs in caps, and people wear them for reasons beyond their love for baseball. ', 'cap1.jpg', 'cap2.jpg', 'cap1.jpg', 'cap1.jpg', 3200.00, 10, 'Blue');
-INSERT INTO `products` VALUES (6, 'Basket Ball Cap', 'Cap', 'A baseball cap that became popular in the 1890s is a perfect mix of style and utility. It is one of the favorite designs in caps, and people wear them for reasons beyond their love for baseball. ', 'cap2.jpg', 'cap2.jpg', 'cap2.jpg', 'cap2.jpg', 2500.00, 10, 'Ocean Blue');
-INSERT INTO `products` VALUES (7, 'Base Ball Cap', 'Cap', 'A baseball cap that became popular in the 1890s is a perfect mix of style and utility. It is one of the favorite designs in caps, and people wear them for reasons beyond their love for baseball. ', 'cap3.jpg', 'cap3.jpg', 'cap3.jpg', 'cap3.jpg', 3000.00, 10, 'Black');
-INSERT INTO `products` VALUES (8, 'NY Black', 'Cap', 'A baseball cap that became popular in the 1890s is a perfect mix of style and utility. It is one of the favorite designs in caps, and people wear them for reasons beyond their love for baseball. ', 'cap4.jpg', 'cap4.jpg', 'cap4.jpg', 'cap4.jpg', 2000.00, 10, 'Black');
+INSERT INTO `products` VALUES (1, 'NIKE', 'featured', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula massa', 'cloth_4.jpg', 'cloth_4.jpg', 'cloth_4.jpg', 'cloth_4.jpg', 7500.00, 10, 'Black');
+INSERT INTO `products` VALUES (2, 'FUKUJE', 'full suite', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula massa', 'cloth_1.jpg', 'cloth_2.jpg', 'cloth_4.jpg', 'cloth_2.jpg', 3200.00, 10, 'white');
+INSERT INTO `products` VALUES (3, 'Modern Cloth', 'full suite', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula massa', 'cloth_2.jpg', 'cloth_3.jpg', 'cloth_4.jpg', 'cloth_1.jpg', 3500.00, 10, 'bg');
+INSERT INTO `products` VALUES (4, 'Wedding Cloth', 'full suite', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula massa', 'cloth_3.jpg', 'cloth_1.jpg', 'cloth_1.jpg', 'cloth_1.jpg', 5000.00, 10, 'bg');
+INSERT INTO `products` VALUES (5, 'Nike Cap', 'cap', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula massa', 'cap1.jpg', 'cap1.jpg', 'cap1.jpg', 'cap1.jpg', 2500.00, 5, 'Blue');
+INSERT INTO `products` VALUES (6, 'Green T-Shirt', 'tshirt', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula massa', 'tshirt.jpg', 'tshirt.jpg', 'tshirt.jpg', 'tshirt.jpg', 1500.00, 5, 'Green');
 
 -- ----------------------------
 -- Table structure for users

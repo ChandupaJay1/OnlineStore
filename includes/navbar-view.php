@@ -30,8 +30,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="cart.php"> <i class="fas fa-bag-shopping"></i></a>
-                    <a href="login.php"> <i class="fas fa-user"></i></a>
+                    <a href="cart.php"> <i class="fas fa-bag-shopping "></i></a>
+                    <a href="login.php"> <i class="fas fa-user "></i></a>
+                    <a href="adminLogin.php"><i class="fas fa-user-cog "></i></a>
                 </li>
 
 

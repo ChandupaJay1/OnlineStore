@@ -38,12 +38,16 @@ body {
 }
 
 .buy-btn {
-    background-color: #ff5722;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #da6b26;
+    margin-top: 10px;
+    width: 8rem;
+    padding: 10px;
+    text-align: center;
     border-radius: 20px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    color: white;
+    opacity: 1;
+    transform: 0.4s all;
+    border: none;
 }
 
 .buy-btn:hover {

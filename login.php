@@ -100,9 +100,9 @@ if (isset($_POST['login_btn'])) {
                     <a id="register-url" class="btn" href="register.php">Don't have an account? Register</a>
                 </div>
 
-                <div class="form-group mt-2">
+                <!-- <div class="form-group mt-2">
                     <a id="admin-url" class="btn" href="adminLogin.php">Go To Admin Login</a>
-                </div>
+                </div> -->
             </form>
         </div>
 
