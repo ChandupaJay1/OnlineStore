@@ -30,7 +30,7 @@
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('assets/images/img_2.jpg'); background-size: cover; background-position: center;">
+                <div class="carousel-item active" style="background-image: url('assets/images/carousel-img-1.jpg'); background-size: cover; background-position: center;">
                     <div class="carousel-caption text-center">
                         <h5>NEW ARRIVALS</h5>
                         <h1><span>Best Prices</span> this Season</h1>
@@ -38,7 +38,7 @@
                         <button class="btn btn-primary">Shop Now</button>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg'); background-size: cover; background-position: center;">
+                <div class="carousel-item" style="background-image: url('assets/images/carousel-img-2.jpg'); background-size: cover; background-position: center;">
                     <div class="carousel-caption text-center">
                         <h5>EXCLUSIVE COLLECTION</h5>
                         <h1><span>Trendy & Stylish</span> Outfits</h1>
@@ -46,7 +46,7 @@
                         <button class="btn btn-primary">Explore Now</button>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('assets/images/img_2.jpg'); background-size: cover; background-position: center;">
+                <div class="carousel-item" style="background-image: url('assets/images/carousel-img-3.png'); background-size: cover; background-position: center;">
                     <div class="carousel-caption text-center">
                         <h5>SUMMER SALE</h5>
                         <h1><span>Up to 50% Off</span> on Selected Items</h1>
@@ -72,19 +72,40 @@
         <div class="container text-center my-5" id="brand">
             <div class="row">
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
-                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_1.png" alt="Brand 1" />
+                    <img class="img-fluid brand-logo" src="assets/images/brand/1-5.jpg" alt="Brand 1" />
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
-                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_2.jpg" alt="Brand 2" />
+                    <img class="img-fluid brand-logo" src="assets/images/brand/2-8.jpg" alt="Brand 2" />
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
-                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_6.jpg" alt="Brand 3" />
+                    <img class="img-fluid brand-logo" src="assets/images/brand/4-5.jpg" alt="Brand 3" />
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
-                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_4.png" alt="Brand 4" />
+                    <img class="img-fluid brand-logo" src="assets/images/brand/5-5.jpg" alt="Brand 4" />
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
-                    <img class="img-fluid brand-logo" src="assets/images/brand/brand_5.jpg" alt="Brand 5" />
+                    <img class="img-fluid brand-logo" src="assets/images/brand/6-4.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/2-8.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/8-4.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/9-3.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/7-4.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/14-1.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/13-1.jpg" alt="Brand 5" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 my-3">
+                    <img class="img-fluid brand-logo" src="assets/images/brand/16-min-3.jpg" alt="Brand 5" />
                 </div>
             </div>
         </div>
