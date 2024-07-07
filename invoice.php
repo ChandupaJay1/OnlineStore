@@ -5,16 +5,20 @@ $order_id = htmlspecialchars($_GET['order_id']);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/invoice.css">
+
     <link rel="icon" href="assets/images/icon/ico-new.png">
 </head>
+
 <body>
     <?php include('includes/navbar-view.php'); ?>
     <section class="my-5 py-5" id="invoice-section">
@@ -58,10 +62,10 @@ $order_id = htmlspecialchars($_GET['order_id']);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
+                    <?php
                     $total_payment = 0;
-                    if (isset($_SESSION['order_items'])): ?>
-                        <?php foreach ($_SESSION['order_items'] as $item): ?>
+                    if (isset($_SESSION['order_items'])) : ?>
+                        <?php foreach ($_SESSION['order_items'] as $item) : ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($item['product_name']); ?></td>
                                 <td>Rs. <?php echo htmlspecialchars(number_format($item['product_price'], 2)); ?></td>
@@ -79,6 +83,15 @@ $order_id = htmlspecialchars($_GET['order_id']);
                     </tr>
                 </tfoot>
             </table>
+
+            <div class="d-flex justify-content-center align-items-center mt-3">
+                <img src="assets/images/icon/ico-new.png" class="me-2" id="in-logo">
+                <span class="font-monospace text-secondary">
+                    Thank You! Shop Again With Us...
+                </span>
+                <img src="assets/images/icon/ico-new.png" class="me-2 in-logo" id="in-logo">
+            </div>
+
         </div>
     </section>
     <?php include('includes/footer-view.php'); ?>
@@ -87,4 +100,5 @@ $order_id = htmlspecialchars($_GET['order_id']);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
