@@ -63,8 +63,6 @@ if (isset($_POST['login_btn'])) {
 
 <body style="background-color: #F9EBEA">
 
-    <!-- <?php include('adminHeader.php'); ?> -->
-
     <section class="my-5 py-5">
         <div class="container text-center mt-3 pt-5">
             <h2 class="font-weight-bold">Admin Login</h2>
