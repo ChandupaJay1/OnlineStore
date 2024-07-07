@@ -21,10 +21,10 @@ if(isset($_POST['create_product'])){
     $image_name3 = $product_name."3.jpg";
     $image_name4 = $product_name."4.jpg";
 
-    move_uploaded_file($image1,"assets/images/clothes/".$image_name1);
-    move_uploaded_file($image2,"assets/images/clothes/".$image_name2);
-    move_uploaded_file($image3,"assets/images/clothes/".$image_name3);
-    move_uploaded_file($image4,"assets/images/clothes/".$image_name4);
+    move_uploaded_file($image1,"assets/images/clothes/uploads/".$image_name1);
+    move_uploaded_file($image2,"assets/images/clothes/uploads/".$image_name2);
+    move_uploaded_file($image3,"assets/images/clothes/uploads/".$image_name3);
+    move_uploaded_file($image4,"assets/images/clothes/uploads/".$image_name4);
 
     // create new product
     $stmt = $conn->prepare("INSERT INTO `products` (`product_name`, `product_category`, `product_description`,
