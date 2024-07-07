@@ -82,6 +82,7 @@ if ($stmt->error) {
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/shop.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    
     <link rel="icon" href="assets/images/icon/ico-new.png" />
 
 </head>
@@ -102,7 +103,7 @@ if ($stmt->error) {
                     <div class="mb-3">
                         <p class="fw-bold">Category</p>
                         <div class="form-check">
-                            <input class="form-check-input" value="full suite" type="radio" name="category" id="category_one" <?php echo ($category == 'full suite') ? 'checked' : ''; ?>/>
+                            <input class="form-check-input" value="full suite" type="radio" name="category" id="category_one" <?php echo ($category == 'full suite') ? 'checked' : ''; ?> />
                             <label class="form-check-label" for="category_one">
                                 Full Suite
                             </label>
@@ -177,7 +178,7 @@ if ($stmt->error) {
                             </div>
                             <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
                             <h4 class="p-price">Rs. <?php echo $row['product_price']; ?></h4>
-                            <a class="buy-btn mt-3" href="<?php echo "single_product.php?product_id=" . $row['product_id']; ?>">Buy Now</a>
+                            <a href="<?php echo "single_product.php?product_id=" . $row['product_id']; ?>"><button class="buy-btn mt-1">Buy Now</button></a>
                         </div>
                     <?php } ?>
                 </div>

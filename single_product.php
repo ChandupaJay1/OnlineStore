@@ -33,7 +33,7 @@ if (isset($_GET['product_id'])) {
     <title>Single Product</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/shop.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="StyleSheet" href="assets/css/footer.css" />
 
@@ -128,9 +128,7 @@ if (isset($_GET['product_id'])) {
 
                     <h5 class="p-name"><?php echo htmlspecialchars($row['product_name']); ?></h5>
                     <h4 class="p-price">RS.<?php echo htmlspecialchars($row['product_price']); ?></h4>
-                    <a href="<?php echo 'single_product.php?product_id=' . $row['product_id']; ?>">
-                        <button class="buy-btn btn btn-warning">Buy Now</button>
-                    </a>
+                    <a href="<?php echo "single_product.php?product_id=" . $row['product_id']; ?>"><button class="buy-btn mt-1">Buy Now</button></a>
                 </div>
             <?php } ?>
         </div>
