@@ -26,6 +26,9 @@ jobs:
     - name: Display composer.json content
       run: cat composer.json
 
+    - name: Display composer.lock content
+      run: cat composer.lock
+
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v3
