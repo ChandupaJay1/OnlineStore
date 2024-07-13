@@ -17,8 +17,26 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4' # Specify the PHP version you need
+        extensions: mbstring, intl, apcu # Add required PHP extensions
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
+
+    - name: Display composer.json content
+      run: cat composer.json
+
+    - name: Display composer.lock content
+      run: cat composer.lock
+
+    - name: Check PHP version
+      run: php -v
+
+    - name: Check Composer version
+      run: composer -V
 
     - name: Cache Composer packages
       id: composer-cache
